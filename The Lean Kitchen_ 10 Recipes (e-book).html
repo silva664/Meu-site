@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Lean Kitchen: 10 Feel-Good Recipes to Reset Your Habits</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1F3D2B; --sand:#F4ECDD; --coral:#E8674A; --herb:#7FA35C; --ink:#1d1d1b; --paper:#FffaF1; --muted:#5b5a52;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --forest:#9fd3b0; --sand:#17241c; --coral:#f08a70; --herb:#a7c97f; --ink:#f2eee4; --paper:#1d2d23; --muted:#b9b5a6; color-scheme: dark; }
+}
+:root[data-theme="dark"]{ --forest:#9fd3b0; --sand:#17241c; --coral:#f08a70; --herb:#a7c97f; --ink:#f2eee4; --paper:#1d2d23; --muted:#b9b5a6; color-scheme: dark; }
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  font-family:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--sand); color:var(--ink); line-height:1.6; font-size:17px;
+  padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);
+}
+h1,h2,h3{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-weight:800;line-height:1.1;letter-spacing:-.01em}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* COVER */
+.cover{background:var(--forest);color:#F4ECDD;padding:56px 0 72px;overflow:hidden;position:relative}
+.cover-grid{display:grid;gap:32px;align-items:center;grid-template-columns:1.1fr .9fr}
+.cover h1{font-size:clamp(2.6rem,7vw,4.6rem);margin:12px 0 18px}
+.cover h1 em{font-style:normal;color:var(--coral)}
+.cover p.lead{font-size:1.1rem;max-width:34ch;opacity:.9}
+.badge{display:inline-block;border:1.5px solid currentColor;border-radius:999px;padding:6px 14px;font-size:.9rem;font-weight:600}
+.cover svg{width:100%;height:auto}
+.cta{display:inline-block;margin-top:26px;background:var(--coral);color:#1d1d1b;font-weight:600;text-decoration:none;padding:14px 26px;border-radius:999px;font-size:1rem}
+
+/* INTRO */
+section{padding:64px 0}
+.intro{display:grid;gap:28px;grid-template-columns:1fr 1fr;align-items:start}
+.intro h2{font-size:clamp(1.9rem,4.5vw,2.8rem)}
+.intro p+p{margin-top:12px}
+.pillars{display:grid;gap:14px}
+.pillar{background:var(--paper);border-radius:18px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.pillar svg{width:48px;height:48px;flex:none}
+.pillar h3{font-size:1.2rem;margin-bottom:2px}
+.pillar p{color:var(--muted);font-size:.97rem}
+
+/* PLAN */
+.plan{background:var(--paper)}
+.plan h2{font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:10px}
+.plan-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:28px}
+.week{background:var(--sand);border-radius:18px;padding:20px}
+.week h3{font-size:1.25rem;color:var(--forest)}
+.week ul{list-style:none;margin-top:8px}
+.week li{padding:6px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:.96rem}
+.week li:last-child{border-bottom:0}
+
+/* RECIPES */
+.recipes h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:8px}
+.recipes > .wrap > p{color:var(--muted);margin-bottom:34px;max-width:60ch}
+.recipe{display:grid;grid-template-columns:1fr;gap:20px;background:var(--paper);border-radius:24px;padding:22px;margin-bottom:26px}
+@media (min-width:720px){ .recipe{grid-template-columns:260px 1fr;padding:26px} }
+.recipe-art{background:var(--sand);border-radius:18px;padding:12px;display:flex;align-items:center;justify-content:center}
+.recipe-art svg{width:100%;height:auto;max-width:240px}
+.recipe-num{font-family:'Fraunces',serif;color:var(--coral);font-weight:600;font-size:.95rem}
+.recipe h3{font-size:1.7rem;margin:4px 0 10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.meta span{background:var(--sand);border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:600}
+.recipe h4{font-size:1rem;margin:12px 0 4px;color:var(--forest)}
+.recipe ul{padding-left:20px}
+.recipe li{margin:2px 0}
+.recipe ol{padding-left:20px}
+.recipe ol li{margin:6px 0}
+
+/* TIPS */
+.tips{background:var(--forest);color:var(--sand)}
+.tips h2{font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:24px}
+.tips-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.tip{border:1.5px solid rgba(244,236,221,.35);border-radius:18px;padding:20px}
+.tip h3{font-size:1.2rem;margin-bottom:6px;color:var(--coral)}
+.tip p{opacity:.92;font-size:.97rem}
+
+/* FOOTER */
+footer{padding:44px 0 56px;color:var(--muted);font-size:.9rem}
+footer .disclaimer{max-width:70ch;margin-top:10px}
+
+@media (max-width:760px){
+  .cover-grid,.intro{grid-template-columns:1fr}
+  section{padding:48px 0}
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap cover-grid">
+    <div>
+      <span class="badge">10 Recipes &middot; 30-Day Guide</span>
+      <h1>The Lean <em>Kitchen</em></h1>
+      <p class="lead">Ten fresh, simple recipes that help you eat lighter, feel more energized, and build healthy habits that actually stick.</p>
+      <a class="cta" href="#recipes">Start cooking</a>
+    </div>
+    <svg viewBox="0 0 420 380" role="img" aria-label="Illustration of colorful fresh foods in a bowl">
+      <ellipse cx="210" cy="330" rx="170" ry="26" fill="#0f2418" opacity=".5"/>
+      <path d="M60 210 Q60 330 210 330 Q360 330 360 210 Z" fill="#F4ECDD"/>
+      <path d="M50 210 H370" stroke="#E8674A" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="120" cy="170" r="42" fill="#E8674A"/>
+      <circle cx="210" cy="140" r="48" fill="#7FA35C"/>
+      <circle cx="300" cy="172" r="40" fill="#F5C451"/>
+      <circle cx="170" cy="120" r="22" fill="#D94F5C"/>
+      <circle cx="262" cy="110" r="18" fill="#9B6BD1"/>
+      <path d="M190 90 q10 -30 40 -26 q-8 26 -40 26z" fill="#4E8F4A"/>
+      <circle cx="90" cy="250" r="14" fill="#E8674A"/>
+      <circle cx="330" cy="255" r="14" fill="#7FA35C"/>
+      <circle cx="210" cy="268" r="12" fill="#F5C451"/>
+    </svg>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap intro" style="padding:0">
+    <div>
+      <h2>Eat well without the diet drama.</h2>
+      <p>The Lean Kitchen is not about perfection or punishment. It is a practical collection of meals built around vegetables, lean protein, whole grains, and healthy fats, so that you feel satisfied while your eating habits slowly improve.</p>
+      <p>Every recipe uses ingredients you can find at a regular American grocery store, takes 30 minutes or less, and can be scaled up for meal prep.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#7FA35C"/><path d="M14 26 q10 -14 20 -6 q-6 14 -20 6z" fill="#F4ECDD"/></svg>
+        <div><h3>Real food first</h3><p>Whole ingredients you recognize, with little or no processing.</p></div>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#E8674A"/><circle cx="24" cy="24" r="10" fill="#F4ECDD"/></svg>
+        <div><h3>Protein at every meal</h3><p>Keeps you full longer and supports muscle while you eat in a calorie-conscious way.</p></div>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#F5C451"/><path d="M24 10 L30 24 L24 38 L18 24Z" fill="#1F3D2B"/></svg>
+        <div><h3>Simple, repeatable steps</h3><p>Short ingredient lists and clear steps so healthy eating fits a busy week.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plan">
+  <div class="wrap">
+    <h2>A simple 7-day rhythm</h2>
+    <p>Rotate the recipes below across the week. Cook once, eat twice where you can.</p>
+    <div class="plan-grid">
+      <div class="week"><h3>Breakfast</h3><ul><li>Overnight Oats with Chia</li><li>Veggie Egg White Scramble</li><li>Greek Yogurt Berry Parfait</li></ul></div>
+      <div class="week"><h3>Lunch</h3><ul><li>Lemon Herb Chicken Salad</li><li>Black Bean &amp; Quinoa Bowl</li><li>Turkey Lettuce Wraps</li></ul></div>
+      <div class="week"><h3>Dinner</h3><ul><li>Salmon &amp; Roasted Asparagus</li><li>Zucchini Noodles with Shrimp</li><li>Chickpea Spinach Curry</li><li>Tofu Cauliflower Stir-Fry</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="recipes" id="recipes">
+  <div class="wrap">
+    <h2>The 10 Recipes</h2>
+    <p>Each recipe serves 2 to 4 people unless noted. Use measuring cups and a food scale for the most consistent results.</p>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><path d="M40 60 H160 Q160 130 100 130 Q40 130 40 60Z" fill="#fff"/><circle cx="70" cy="80" r="16" fill="#D94F5C"/><circle cx="100" cy="72" r="16" fill="#9B6BD1"/><circle cx="130" cy="84" r="16" fill="#E8674A"/><circle cx="88" cy="100" r="14" fill="#F5C451"/><circle cx="118" cy="104" r="14" fill="#7FA35C"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 01</span>
+        <h3>Greek Yogurt Berry Parfait</h3>
+        <div class="meta"><span>Serves 1</span><span>5 min</span><span>Breakfast</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>1 cup plain Greek yogurt (nonfat or 2%)</li><li>1/2 cup mixed berries, fresh or frozen</li><li>1/4 cup low-sugar granola</li><li>1 tsp honey (optional)</li><li>1 tbsp chopped walnuts</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Spoon half the yogurt into a glass or jar.</li><li>Add half the berries and half the granola.</li><li>Repeat the layers, then top with walnuts and a drizzle of honey.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><path d="M30 100 H170 Q160 140 100 140 Q40 140 30 100Z" fill="#fff"/><path d="M30 100 Q100 60 170 100Z" fill="#7FA35C"/><circle cx="70" cy="95" r="18" fill="#C98B5B"/><circle cx="130" cy="95" r="18" fill="#C98B5B"/><circle cx="100" cy="88" r="10" fill="#E8674A"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 02</span>
+        <h3>Lemon Herb Chicken Salad</h3>
+        <div class="meta"><span>Serves 2</span><span>25 min</span><span>Lunch</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>8 oz boneless chicken breast</li><li>1 lemon (juice and zest)</li><li>1 tbsp olive oil</li><li>1 tsp dried oregano, salt, and pepper</li><li>5 cups mixed greens</li><li>1 cup cherry tomatoes, halved</li><li>1/2 cucumber, sliced</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Rub the chicken with lemon zest, oil, oregano, salt, and pepper.</li><li>Cook in a skillet over medium-high heat, 5 to 6 minutes per side, until the internal temperature reaches 165 F (74 C). Rest 5 minutes, then slice.</li><li>Toss the greens, tomatoes, and cucumber with lemon juice and a pinch of salt. Top with the chicken.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><ellipse cx="100" cy="95" rx="70" ry="38" fill="#fff"/><path d="M60 88 Q100 60 140 88 Q100 110 60 88Z" fill="#F5C451"/><circle cx="80" cy="60" r="10" fill="#7FA35C"/><circle cx="120" cy="58" r="10" fill="#E8674A"/><circle cx="100" cy="48" r="8" fill="#9B6BD1"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 03</span>
+        <h3>Veggie Egg White Scramble</h3>
+        <div class="meta"><span>Serves 1</span><span>10 min</span><span>Breakfast</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>1 cup liquid egg whites</li><li>1/2 cup baby spinach</li><li>1/4 cup diced bell pepper</li><li>2 tbsp diced onion</li><li>2 tbsp shredded part-skim mozzarella</li><li>Salt, pepper, and smoked paprika</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Saute the onion and pepper in a nonstick pan with a spray of oil for 3 minutes.</li><li>Add the spinach and cook until wilted.</li><li>Pour in the egg whites, season, and gently stir until just set. Sprinkle with cheese and serve.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><path d="M30 60 Q100 30 170 60 Q150 130 100 130 Q50 130 30 60Z" fill="#7FA35C"/><path d="M60 80 Q100 60 140 80 Q100 105 60 80Z" fill="#fff"/><circle cx="100" cy="82" r="14" fill="#E8674A"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 04</span>
+        <h3>Turkey Lettuce Wraps</h3>
+        <div class="meta"><span>Serves 3</span><span>20 min</span><span>Lunch</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>1 lb lean ground turkey (93% lean)</li><li>1 tbsp sesame oil</li><li>2 cloves garlic, minced</li><li>1 tbsp low-sodium soy sauce</li><li>1 tsp rice vinegar and 1 tsp grated ginger</li><li>1 small carrot, shredded</li><li>8 butter lettuce leaves</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Brown the turkey in the sesame oil over medium heat, breaking it apart, about 6 minutes.</li><li>Add garlic and ginger, then soy sauce and vinegar. Cook 2 more minutes.</li><li>Spoon into lettuce cups and top with carrot.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><path d="M30 110 Q100 60 170 110 Z" fill="#E8674A"/><path d="M30 110 H170" stroke="#1F3D2B" stroke-width="3"/><path d="M40 100 l8 -40 M60 100 l8 -36 M80 100 l8 -40 M100 100 l8 -36 M120 100 l8 -40" stroke="#4E8F4A" stroke-width="5" stroke-linecap="round"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 05</span>
+        <h3>Salmon with Roasted Asparagus</h3>
+        <div class="meta"><span>Serves 2</span><span>25 min</span><span>Dinner</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>2 salmon fillets (5 oz each)</li><li>1 bunch asparagus, woody ends trimmed</li><li>1 tbsp olive oil</li><li>1 lemon, sliced</li><li>1 tsp garlic powder, salt, and black pepper</li><li>1 tsp fresh dill (optional)</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Heat the oven to 425 F (220 C). Toss the asparagus with half the oil and salt.</li><li>Roast the asparagus for 8 minutes on one sheet pan. Season the salmon and place it on a second pan with lemon slices.</li><li>Add both pans to the oven and bake 10 to 12 minutes, until the salmon flakes easily. Finish with dill.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><path d="M40 60 H160 Q160 135 100 135 Q40 135 40 60Z" fill="#fff"/><circle cx="75" cy="88" r="12" fill="#2B2B2B"/><circle cx="100" cy="82" r="12" fill="#2B2B2B"/><circle cx="125" cy="90" r="12" fill="#2B2B2B"/><circle cx="90" cy="104" r="12" fill="#F4ECDD" stroke="#7FA35C" stroke-width="3"/><circle cx="115" cy="108" r="12" fill="#E8674A"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 06</span>
+        <h3>Black Bean &amp; Quinoa Bowl</h3>
+        <div class="meta"><span>Serves 3</span><span>25 min</span><span>Lunch or dinner</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>1 cup dry quinoa, rinsed</li><li>1 can (15 oz) black beans, drained and rinsed</li><li>1 cup corn kernels</li><li>1 avocado, sliced</li><li>1/2 cup salsa</li><li>Juice of 1 lime, cumin, chili powder, and cilantro</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Cook the quinoa in 2 cups water for 15 minutes, then rest covered for 5 minutes.</li><li>Warm the beans and corn with cumin and chili powder for 4 minutes.</li><li>Build bowls with quinoa, beans, avocado, salsa, lime juice, and cilantro.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><path d="M40 70 Q100 40 160 70 Q140 120 100 120 Q60 120 40 70Z" fill="#fff"/><path d="M60 40 q-10 30 0 60 M100 36 q-10 34 0 64 M140 40 q-10 30 0 60" stroke="#7FA35C" stroke-width="7" stroke-linecap="round" fill="none"/><ellipse cx="100" cy="95" rx="20" ry="10" fill="#E8674A"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 07</span>
+        <h3>Zucchini Noodles with Shrimp</h3>
+        <div class="meta"><span>Serves 2</span><span>15 min</span><span>Dinner</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>2 medium zucchini, spiralized</li><li>8 oz raw shrimp, peeled and deveined</li><li>1 tbsp olive oil</li><li>2 cloves garlic, minced</li><li>1 cup cherry tomatoes, halved</li><li>Red pepper flakes, lemon juice, and parmesan (optional)</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Saute the shrimp in oil with garlic for 2 minutes per side. Remove from the pan.</li><li>Add the tomatoes for 2 minutes, then the zucchini noodles for 2 minutes. Keep them al dente.</li><li>Return the shrimp, add lemon juice and pepper flakes, and serve right away.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><path d="M40 75 H160 Q160 135 100 135 Q40 135 40 75Z" fill="#E8A33D"/><path d="M40 75 Q100 40 160 75Z" fill="#7FA35C"/><circle cx="75" cy="95" r="9" fill="#F5E6B8"/><circle cx="110" cy="100" r="9" fill="#F5E6B8"/><circle cx="130" cy="90" r="9" fill="#F5E6B8"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 08</span>
+        <h3>Chickpea Spinach Curry</h3>
+        <div class="meta"><span>Serves 4</span><span>30 min</span><span>Dinner</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>1 tbsp olive oil</li><li>1 small onion, diced</li><li>3 cloves garlic and 1 tsp grated ginger</li><li>1 tbsp curry powder and 1 tsp cumin</li><li>1 can (14 oz) diced tomatoes</li><li>1 can (15 oz) chickpeas, drained</li><li>4 cups baby spinach</li><li>1/2 cup light coconut milk</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Cook the onion in oil for 5 minutes. Add garlic, ginger, curry powder, and cumin for 1 minute.</li><li>Stir in tomatoes and chickpeas. Simmer 12 minutes.</li><li>Fold in spinach until wilted, add coconut milk, and serve with brown rice or on its own.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><rect x="45" y="75" width="110" height="60" rx="30" fill="#fff"/><circle cx="60" cy="50" r="30" fill="#D9F0D2"/><circle cx="60" cy="50" r="16" fill="#fff"/><rect x="50" y="38" width="20" height="8" rx="3" fill="#E8674A" opacity=".0"/><rect x="72" y="88" width="12" height="36" rx="2" fill="#7FA35C"/><rect x="95" y="90" width="12" height="36" rx="2" fill="#E8674A"/><rect x="118" y="86" width="12" height="36" rx="2" fill="#F5C451"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 09</span>
+        <h3>Overnight Oats with Chia</h3>
+        <div class="meta"><span>Serves 1</span><span>5 min + overnight</span><span>Breakfast</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>1/2 cup rolled oats</li><li>3/4 cup unsweetened almond milk</li><li>1 tbsp chia seeds</li><li>1/4 cup plain Greek yogurt</li><li>1/2 banana, sliced, or 1/2 cup berries</li><li>1/2 tsp cinnamon and a few drops of vanilla</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Stir the oats, milk, chia, cinnamon, and vanilla in a jar.</li><li>Refrigerate at least 6 hours or overnight.</li><li>Top with yogurt and fruit in the morning. Eat cold or warm it for 1 minute.</li></ol>
+      </div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-art"><svg viewBox="0 0 200 160" aria-hidden="true"><rect width="200" height="160" rx="14" fill="#F4ECDD"/><circle cx="100" cy="82" r="48" fill="#fff"/><circle cx="80" cy="72" r="10" fill="#F4ECDD"/><circle cx="105" cy="66" r="10" fill="#F4ECDD"/><circle cx="122" cy="88" r="10" fill="#F4ECDD"/><circle cx="92" cy="100" r="10" fill="#F4ECDD"/><rect x="62" y="102" width="30" height="20" rx="6" fill="#E8A33D"/><rect x="110" y="48" width="18" height="18" rx="4" fill="#7FA35C"/></svg></div>
+      <div>
+        <span class="recipe-num">Recipe 10</span>
+        <h3>Tofu Cauliflower Stir-Fry</h3>
+        <div class="meta"><span>Serves 3</span><span>25 min</span><span>Dinner</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>1 block (14 oz) extra-firm tofu, pressed and cubed</li><li>3 cups cauliflower florets</li><li>1 red bell pepper, sliced</li><li>1 tbsp sesame oil and 1 tbsp avocado oil</li><li>2 tbsp low-sodium soy sauce</li><li>1 tbsp rice vinegar and 1 tsp honey</li><li>1 tsp garlic and 1 tsp ginger, minced</li></ul>
+        <h4>Steps</h4>
+        <ol><li>Crisp the tofu in avocado oil over medium-high heat, 8 minutes, turning often.</li><li>Add cauliflower and pepper with a splash of water. Cover and steam-fry 5 minutes.</li><li>Stir in garlic, ginger, soy sauce, vinegar, and honey. Cook 1 minute more and finish with sesame oil.</li></ol>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="tips">
+  <div class="wrap">
+    <h2>Small habits, big results</h2>
+    <div class="tips-grid">
+      <div class="tip"><h3>Batch your protein</h3><p>Cook two proteins on Sunday. Use them in salads, wraps, and bowls all week.</p></div>
+      <div class="tip"><h3>Fill half your plate</h3><p>Start each meal with vegetables. They add volume, fiber, and color for fewer calories.</p></div>
+      <div class="tip"><h3>Drink water first</h3><p>Have a glass of water before meals. Many people find it helps them recognize fullness.</p></div>
+      <div class="tip"><h3>Keep the kitchen stocked</h3><p>Frozen vegetables, canned beans, and plain Greek yogurt make healthy cooking easy.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>The Lean Kitchen</strong> &middot; Ten recipes for everyday healthy eating.
+    <p class="disclaimer">This book provides general nutrition and cooking information. It is not medical advice. Talk with your doctor or a registered dietitian before changing your diet, especially if you have a health condition, are pregnant, or take medication.</p>
+  </div>
+</footer>
+
+</body>
+</html>
